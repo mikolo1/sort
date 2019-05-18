@@ -6,6 +6,6 @@
 ### Budowanie projektu : 
 ##### git clone https://github.com/ZdybelA/Algorithms.git
 ##### cd Algorithms/
-##### mvn clean compile
+##### mvn clean package
 ### Uruchomienie projektu :
 ##### mvn exec:java -Dexec.mainClass="com.azdybel.algs.Main"  
