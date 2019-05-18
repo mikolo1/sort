@@ -1,4 +1,4 @@
-# mongoDB
+# Algorithms
 
 ## Autor : Aleksander Zdybel
 
