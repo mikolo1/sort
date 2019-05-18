@@ -27,12 +27,12 @@ public class TimeMeasurementHelper {
     public static void Compare(IAlgorithmRunner algorithmRunnerA, IAlgorithmRunner algorithmRunnerB) {
         float aTime = ExecutionTimeMeasure(algorithmRunnerA, false);
         float bTime = ExecutionTimeMeasure(algorithmRunnerB, false);
-        System.out.printf("\n\n\n");
-        System.out.printf("Time diff generated succesfully ");
-        System.out.printf("*********************************");
+        System.out.println("\n\n\n");
+        System.out.println("Time diff generated succesfully ");
+        System.out.println("*********************************");
         System.out.printf("Time diff between A and B: %f seconds\n", (aTime - bTime) / Math.pow(10, 9));
-        System.out.printf("*********************************");
-        System.out.printf("\n\n\n");
+        System.out.println("*********************************");
+        System.out.println("\n\n\n");
 
     }
 }
