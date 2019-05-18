@@ -8,4 +8,4 @@
 ##### cd Algorithms/
 ##### mvn clean package
 ### Uruchomienie projektu :
-##### mvn exec:java -Dexec.mainClass="com.azdybel.algs.Main"  
+##### mvn exec:java -Dexec.mainClass="com.azdybel.algs.Main.Main"  
