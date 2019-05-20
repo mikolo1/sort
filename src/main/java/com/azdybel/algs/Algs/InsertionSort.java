@@ -1,0 +1,87 @@
+package com.azdybel.algs.Algs;
+
+import com.azdybel.algs.Interfaces.IAlgorithmRunner;
+import com.azdybel.algs.Interfaces.IInsertionSort;
+
+import java.util.Random;
+
+public class InsertionSort implements IInsertionSort<Integer>, IAlgorithmRunner {
+
+    private int[] table;
+    private int sortedSize;
+    private int[] sortedTable;
+    private int filledTableSize;
+
+    @Override
+    public int getSortedSize() {
+        return sortedSize;
+    }
+
+    @Override
+    public Integer getElementIndex(int index) {
+        return table[index];
+    }
+
+    @Override
+    public void insertElement(int index, Integer elementToInsert) {
+        setFilledTableSize(filledTableSize);
+
+        if (index < 0 && index > table.length - 1) {
+            System.out.println("w tablicy nie ma takiego indeksu");
+        } else {
+            int j = getFilledTableSize();
+            for (; j > index; j--) {
+                table[j] = table[j - 1];
+            }
+            table[j] = elementToInsert;
+        }
+    }
+
+    @Override
+    public void showTableElements() {
+        for (int i = 0; i < table.length; i++) {
+            System.out.println(table[i]);
+        }
+    }
+
+    @Override
+    public void sort() {
+        int tabValue;
+        int j;
+
+        for (int i=1;i<table.length;i++) {
+            j = i;
+            tabValue = table[i];
+            while (j > 0 && table[j - 1] > tabValue) {
+                table[j] = table[j - 1];
+                j--;
+            }
+            table[j] = tabValue;
+        }
+
+    }
+
+    @Override
+    public void setup() {
+        this.table = new int[12];
+
+        for (int i = 0; i < 10; i++) {
+            this.table[i] = new Random(System.nanoTime()).nextInt(10);
+        }
+        setFilledTableSize(10);
+
+    }
+
+    @Override
+    public void run() {
+
+    }
+
+    public int getFilledTableSize() {
+        return filledTableSize;
+    }
+
+    public void setFilledTableSize(int filledTableSize) {
+        this.filledTableSize = filledTableSize;
+    }
+}
