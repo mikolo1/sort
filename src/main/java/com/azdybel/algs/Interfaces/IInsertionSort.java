@@ -7,4 +7,5 @@ public interface IInsertionSort<T> {
     void insertElement(int index, T elementToInsert);
     void showTableElements();
     void sort();
+    public boolean binarySearch(int[]tab, int numberToFind);
 }

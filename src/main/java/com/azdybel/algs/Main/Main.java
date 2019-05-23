@@ -10,8 +10,14 @@ import static com.azdybel.algs.Helpers.TimeMeasurementHelper.Compare;
 public class Main {
     public static void main(String[] args) {
 
-        ListInsertionSort myListIn = new ListInsertionSort();
-        myListIn.setup();
+//        ListInsertionSort myListIn = new ListInsertionSort();
+//        myListIn.setup();
+
+        InsertionSort is = new InsertionSort();
+        int[]tab=new int[]{1,3,4,6,8,9,10,12,15,19,22,29};
+
+        System.out.println(is.binarySearch(tab, 2));
+
 
 //        IAlgorithmRunner testAlgorithm = new SimpleAlgorithm();
 //        IAlgorithmRunner testAlgorithm2 = new SimpleAlgorithm();

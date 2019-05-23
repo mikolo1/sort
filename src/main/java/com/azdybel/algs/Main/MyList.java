@@ -2,6 +2,8 @@ package com.azdybel.algs.Main;
 
 import com.azdybel.algs.Interfaces.IMyList;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 public class MyList implements IMyList {
 
     private ListElement head;
@@ -67,26 +69,33 @@ public class MyList implements IMyList {
         } else {
 
             ListElement iterator = this.getHead();
-            do {
-                iterator = iterator.next;
+            if (listElement.getValue() <= iterator.getValue()) {
+                this.setHead(listElement);
+            } else {
+                AtomicBoolean isLast = new AtomicBoolean(false);
+
+                while (listElement.getValue() > iterator.getValue() && !isLast.get()) {
+                    iterator = iterator.next;
+                    if (iterator.equals(this.getHead())) {
+                        this.setLast(listElement);
+                        isLast.set(true);
+                    }
+                }
             }
-            while ((listElement.getValue() > iterator.getValue())
-                    || iterator.next != this.getHead());
             listElement.previos = iterator.previos;
             listElement.next = iterator;
             listElement.previos.next = listElement;
             iterator.previos = listElement;
-            this.incSize();
-            this.setLast(listElement);
-        }
 
+        }
+        this.incSize();
     }
 
     @Override
     public void remove(ListElement listElement) {
 
         if (this.getSize() == 0) {
-            System.out.println("ni nie..");
+            System.out.println("no nie..");
         } else {
             listElement.previos.next = listElement.next;
             listElement.next.previos = listElement.previos;

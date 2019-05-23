@@ -62,4 +62,9 @@ public class ListInsertionSort implements IInsertionSort<ListElement>, IAlgorith
     public void sort() {
 
     }
+
+    @Override
+    public boolean binarySearch(int[] tab, int numberToFind) {
+        return false;
+    }
 }

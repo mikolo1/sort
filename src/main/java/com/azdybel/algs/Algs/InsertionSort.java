@@ -49,7 +49,7 @@ public class InsertionSort implements IInsertionSort<Integer>, IAlgorithmRunner 
         int tabValue;
         int j;
 
-        for (int i=1;i<table.length;i++) {
+        for (int i = 1; i < table.length; i++) {
             j = i;
             tabValue = table[i];
             while (j > 0 && table[j - 1] > tabValue) {
@@ -59,6 +59,26 @@ public class InsertionSort implements IInsertionSort<Integer>, IAlgorithmRunner 
             table[j] = tabValue;
         }
 
+    }
+
+    @Override
+    public boolean binarySearch(int[] tab, int numberToFind) {
+        int l = 0;                             //zakres do lewej
+        int r = (tab.length - 1);                         //zakres do prawej
+        int m;                                      //środek tabeli
+
+        while (l <= r) {
+            m = (l + r) / 2;
+            if (tab[m] == numberToFind) {
+                return true;
+            } if (numberToFind > tab[m]) {
+                l = m + 1;
+            } if (numberToFind < tab[m]) {
+                r = m - 1;
+            }
+        }
+
+        return false;
     }
 
     @Override
