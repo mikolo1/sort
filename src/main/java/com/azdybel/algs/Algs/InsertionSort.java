@@ -64,16 +64,16 @@ public class InsertionSort implements IInsertionSort<Integer>, IAlgorithmRunner 
     @Override
     public boolean binarySearch(int[] tab, int numberToFind) {
         int l = 0;                             //zakres do lewej
-        int r = (tab.length - 1);                         //zakres do prawej
+        int r = tab.length-1;                         //zakres do prawej
         int m;                                      //środek tabeli
 
         while (l <= r) {
             m = (l + r) / 2;
             if (tab[m] == numberToFind) {
                 return true;
-            } if (numberToFind > tab[m]) {
+            } else if (numberToFind > tab[m]) {
                 l = m + 1;
-            } if (numberToFind < tab[m]) {
+            } else if (numberToFind < tab[m]) {
                 r = m - 1;
             }
         }
@@ -83,10 +83,10 @@ public class InsertionSort implements IInsertionSort<Integer>, IAlgorithmRunner 
 
     @Override
     public void setup() {
-        this.table = new int[12];
+        this.table = new int[300];
 
-        for (int i = 0; i < 10; i++) {
-            this.table[i] = new Random(System.nanoTime()).nextInt(10);
+        for (int i = 0; i < 300; i++) {
+            this.table[i] = new Random(System.nanoTime()).nextInt(300);
         }
         setFilledTableSize(10);
 
@@ -94,7 +94,7 @@ public class InsertionSort implements IInsertionSort<Integer>, IAlgorithmRunner 
 
     @Override
     public void run() {
-
+        sort();
     }
 
     public int getFilledTableSize() {
